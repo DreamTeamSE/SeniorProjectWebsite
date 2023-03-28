@@ -9,11 +9,20 @@ const surveyJson = {
 
 function App() {
   const survey = new Model(surveyJson);
-  
-  survey.onStarted.add(survey.startTimer());
+  let timerStarted = false;
+
+  survey.onAfterRenderQuestion.add(function() {
+    if (survey.currentPageNo === 1) {
+      if (timerStarted === false) {
+        survey.startTimer();
+        timerStarted = true;
+      }
+    }
+  })
 
   survey.onComplete.add(function(){
     survey.stopTimer();
+    timerStarted = false;
     console.log("Time spent: ", survey.timeSpent);
 });
 
