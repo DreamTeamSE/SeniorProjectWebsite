@@ -20,6 +20,14 @@ function App() {
     }
   })
 
+  survey.onCurrentPageChanging.add(function(sender, options) {
+    if (options.isPrevPage === true) {
+      options.oldCurrentPage.questions.forEach(function(question) {
+        question.value = undefined;
+      })
+    }
+  })
+
   survey.onComplete.add(function(){
     survey.stopTimer();
     timerStarted = false;
