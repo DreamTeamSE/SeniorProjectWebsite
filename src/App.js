@@ -1,6 +1,7 @@
 import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // Personal Hx Testing Referral Eligibility (Current)
 // const oldSurveyJson = {
@@ -48,7 +49,14 @@ function App() {
     }
   });
 
-  return <Survey model={survey}></Survey>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Survey model={survey}></Survey>}/>
+        <Route path="dashboard" element={<p> test </p>}/>
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
