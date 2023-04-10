@@ -2,6 +2,7 @@ import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './Dashboard.js';
 
 // Personal Hx Testing Referral Eligibility (Current)
 // const oldSurveyJson = {
@@ -10,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // }
 
 // Personal Hx Testing Referral Eligibility (Experimental)
-const surveyJson = {
+export const surveyJson = {
   "surveyId": "96c0bc3c-d4c0-471d-8be3-b2bc94047645",
   "surveyPostId": "4ee7e29b-cf4a-414e-9bcb-c0e3f0021fbb"
 }
@@ -53,7 +54,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Survey model={survey}></Survey>}/>
-        <Route path="dashboard" element={<p> test </p>}/>
+        <Route path="dashboard" element={<Dashboard/>}/>
       </Routes>
     </Router>
   )
