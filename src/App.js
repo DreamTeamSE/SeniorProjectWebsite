@@ -10,8 +10,8 @@ import { Survey } from 'survey-react-ui';
 
 // Personal Hx Testing Referral Eligibility (Experimental)
 const surveyJson = {
-  "surveyId": "96c0bc3c-d4c0-471d-8be3-b2bc94047645",
-  "surveyPostId": "4ee7e29b-cf4a-414e-9bcb-c0e3f0021fbb"
+  "surveyId": "ca2e1aa0-e865-440b-9a5d-7452852d6a2a",
+  "surveyPostId": "aca99aaa-d33f-45ba-b77f-bf2f85a430b3"
 }
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
   survey.onSendResult.add(function(sender, options){
     if(options.success){
       survey.clear();
-      survey.render();  
+      survey.render();
     }
   });
 
