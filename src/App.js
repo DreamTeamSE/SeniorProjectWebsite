@@ -15,6 +15,7 @@ function App() {
   survey.css = myCss;
  
   let timerStarted = false;
+  let result = -1;
 
   survey.onAfterRenderQuestion.add(function() {
     if (survey.currentPageNo === 1) {
@@ -33,10 +34,44 @@ function App() {
     }
   })
 
+  survey.onCurrentPageChanged.add(function(sender, options) {
+    if(survey.getQuestionByName("meetsCriteria").isVisible && options.newCurrentPage.questions.indexOf(survey.getQuestionByName("meetsCriteria")) !== -1){
+      result = 1;
+    }
+    else if(survey.getQuestionByName("doesNotMeetCriteria").isVisible && options.newCurrentPage.questions.indexOf(survey.getQuestionByName("doesNotMeetCriteria")) !== -1){
+      result = 2;
+    }
+    else if(survey.getQuestionByName("geneticCounselor").isVisible && options.newCurrentPage.questions.indexOf(survey.getQuestionByName("geneticCounselor")) !== -1){
+      result = 3;
+    }
+    else if(survey.getQuestionByName("familyTract").isVisible && options.newCurrentPage.questions.indexOf(survey.getQuestionByName("familyTract")) !== -1){
+      result = 4;
+    }
+    else if(survey.getQuestionByName("germlineTesting").isVisible && options.newCurrentPage.questions.indexOf(survey.getQuestionByName("germlineTesting")) !== -1){
+      result = 5;
+    }
+  })
+
   survey.onComplete.add(function() {
       survey.stopTimer();
       timerStarted = false;
       survey.getQuestionByName("surveytime").value = survey.timeSpent;
+
+      if(result === 1){
+        survey.getQuestionByName("endResult").value = "Has met the criteria for screening";
+      }
+      else if(result === 2){
+        survey.getQuestionByName("endResult").value = "Has not meet the criteria for screening";
+      }
+      else if(result === 3){
+        survey.getQuestionByName("endResult").value = "Should speak to a genetic counselor";
+      }
+      else if(result === 4){
+        survey.getQuestionByName("endResult").value = "Should be taken down the Family Hx Tract";
+      }
+      else if(result === 5){
+        survey.getQuestionByName("endResult").value = "Should be considered for Germline testing";
+      }
   });
 
   survey.onSendResult.add(function(sender, options){
