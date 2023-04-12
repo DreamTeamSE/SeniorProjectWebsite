@@ -34,32 +34,26 @@ function RunSurvey(props) {
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("meetsCriteria")) !== -1 && survey.getQuestionByName("meetsCriteria").isVisible){
       // result = 1;
       results.push(1);
-      console.log("MC");
     }
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("doesNotMeetCriteria")) !== -1 && survey.getQuestionByName("doesNotMeetCriteria").isVisible){
       // result = 2;
       results.push(2);
-      console.log("DMC");
     }
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("geneticCounselor")) !== -1 && survey.getQuestionByName("geneticCounselor").isVisible){
       // result = 3;
       results.push(3);
-      console.log("GC");
     }
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("familyTract")) !== -1 && survey.getQuestionByName("familyTract").isVisible){
       // result = 4;
       results.push(4);
-      console.log("FT");
     }
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("germlineTesting")) !== -1 && survey.getQuestionByName("germlineTesting").isVisible){
       // result = 5;
       results.push(5);
-      console.log("GT");
     }
     if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("premm")) !== -1 && survey.getQuestionByName("premm").isVisible){
       // result = 6;
       results.push(6);
-      console.log("PREMM");
     }
   })
 
