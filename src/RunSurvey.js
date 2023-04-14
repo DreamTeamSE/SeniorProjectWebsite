@@ -10,7 +10,6 @@ function RunSurvey(props) {
   survey.css = myCss;
   
   let timerStarted = false;
-  // let result = -1;
   let results = [];
 
   survey.onAfterRenderQuestion.add(function() {
@@ -27,32 +26,38 @@ function RunSurvey(props) {
       options.oldCurrentPage.questions.forEach(function(question) {
         question.value = undefined;
       })
+
+      if(options.oldCurrentPage.getQuestionByName("meetsCriteria") !== -1){
+        results.splice(results.length - 1);
+      }
     }
   })
 
+  function checkResultVisibility(resultName, options){
+    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName(resultName)) !== -1 && survey.getQuestionByName(resultName).isVisible){
+      return true;
+    }
+
+    return false;
+  }
+
   survey.onCurrentPageChanged.add(function(sender, options) {
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("meetsCriteria")) !== -1 && survey.getQuestionByName("meetsCriteria").isVisible){
-      // result = 1;
+    if(checkResultVisibility("meetsCriteria", options)){
       results.push(1);
     }
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("doesNotMeetCriteria")) !== -1 && survey.getQuestionByName("doesNotMeetCriteria").isVisible){
-      // result = 2;
+    if(checkResultVisibility("doesNotMeetCriteria", options)){
       results.push(2);
     }
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("geneticCounselor")) !== -1 && survey.getQuestionByName("geneticCounselor").isVisible){
-      // result = 3;
+    if(checkResultVisibility("geneticCounselor", options)){
       results.push(3);
     }
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("familyTract")) !== -1 && survey.getQuestionByName("familyTract").isVisible){
-      // result = 4;
+    if(checkResultVisibility("familyTract", options)){
       results.push(4);
     }
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("germlineTesting")) !== -1 && survey.getQuestionByName("germlineTesting").isVisible){
-      // result = 5;
+    if(checkResultVisibility("germlineTesting", options)){
       results.push(5);
     }
-    if(options.newCurrentPage.questions.indexOf(survey.getQuestionByName("premm")) !== -1 && survey.getQuestionByName("premm").isVisible){
-      // result = 6;
+    if(checkResultVisibility("premm", options)){
       results.push(6);
     }
   })
@@ -90,27 +95,6 @@ function RunSurvey(props) {
       }
 
       survey.getQuestionByName("endResult").value = resultText;
-
-      /*
-      if(result === 1){
-        survey.getQuestionByName("endResult").value = "Has met the criteria for screening";
-      }
-      else if(result === 2){
-        survey.getQuestionByName("endResult").value = "Has not meet the criteria for screening";
-      }
-      else if(result === 3){
-        survey.getQuestionByName("endResult").value = "Should speak to a genetic counselor";
-      }
-      else if(result === 4){
-        survey.getQuestionByName("endResult").value = "Should be taken down the Family Hx Tract";
-      }
-      else if(result === 5){
-        survey.getQuestionByName("endResult").value = "Should be considered for Germline testing";
-      }
-      else if(result === 6){
-        survey.getQuestionByName("endResult").value = "Doesn't meet criteria but consider risk mod PREMM";
-      }
-    */
   });
 
   survey.onSendResult.add(function(sender, options){
