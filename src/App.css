@@ -23,3 +23,30 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.personal-hx-btn {
+  background-color: #19b394;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: calc(3px + 2vmin);
+  position: fixed;
+  bottom: 20px;
+  right: 160px;
+}
+.family-hx-btn {
+  background-color: #19b394;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: calc(3px + 2vmin);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+

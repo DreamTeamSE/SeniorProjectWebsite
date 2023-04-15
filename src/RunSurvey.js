@@ -87,7 +87,7 @@ function RunSurvey(props) {
         }
         else if(results[i] === 4){
           resultText += "Should be taken down the Family Hx Tract"
-          navigate('/familyhx');
+          navigate('/familyhx'); //redirects to familyHx if this is the result. Can be taken out if we don't want to automatically redirect. See App.js
         }
         else if(results[i] === 5){
           resultText += "Should be considered for Germline testing";
@@ -101,14 +101,21 @@ function RunSurvey(props) {
   });
 
   survey.onSendResult.add(function(sender, options){
-    if(options.success){
-      survey.clear();
-      survey.render();
+    if(options.success){ //not sure if clear and render are needed here for consistency of results so this might need fixing
+      //survey.clear();
+      //survey.render();
       results = [];
     }
   });
 
-  return <Survey model={survey}/>
+  return (
+      <>
+        <Survey model={survey}/>
+        <button className="personal-hx-btn" onClick={() => navigate('/')}>Personal Hx Tract</button>
+        <button className="family-hx-btn" onClick={() => navigate('/familyhx')}>Family Hx Tract</button>
+      </>
+  );
+  //return <Survey model={survey}/>
 }
 
 export default RunSurvey;

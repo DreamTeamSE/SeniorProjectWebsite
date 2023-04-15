@@ -6,7 +6,7 @@ import RunSurvey from './RunSurvey';
 function App() {
   const handleSurveyComplete = (surveyResults) => {
     const resultText = surveyResults.getQuestionByName("endResult").value;
-    if (resultText.includes("Should be taken down the Family Hx Tract")) {
+    if (resultText.includes("Should be taken down the Family Hx Tract")) { //Remove if we don't want to automatically redirect.
       return <Navigate to="/familyhx" />;
     }
   };
@@ -21,6 +21,11 @@ function App() {
   );
 }
 
-export default App;
+export default App
+
+
+
+
+
 
 
