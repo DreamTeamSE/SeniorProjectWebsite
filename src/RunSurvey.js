@@ -2,13 +2,15 @@ import 'survey-core/defaultV2.min.css';
 import './App.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
-  
+import { useNavigate } from "react-router-dom";
+
 function RunSurvey(props) {
   const surveyJson = props.data;
+  const navigate = useNavigate();
 
   const survey = new Model(surveyJson);
   survey.css = myCss;
-  
+
   let timerStarted = false;
   let results = [];
 
@@ -85,6 +87,7 @@ function RunSurvey(props) {
         }
         else if(results[i] === 4){
           resultText += "Should be taken down the Family Hx Tract"
+          navigate('/familyhx');
         }
         else if(results[i] === 5){
           resultText += "Should be considered for Germline testing";
