@@ -7,7 +7,7 @@ function RunSurvey(props) {
   const surveyJson = props.data;
 
   const survey = new Model(surveyJson);
-  survey.css = myCss;
+  // survey.css = myCss;
   
   let timerStarted = false;
   let results = [];
@@ -110,9 +110,9 @@ function RunSurvey(props) {
 
 export default RunSurvey;
 
-var myCss = {
-  question: {
-    content: "content-text",
-    title: "question-text",
-  }
-};
+// var myCss = {
+//   question: {
+//     content: "content-text",
+//     title: "question-text",
+//   }
+// };
