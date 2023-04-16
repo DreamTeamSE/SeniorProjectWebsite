@@ -12,7 +12,7 @@ const surveyJson = {
 
 function App() {
   const survey = new Model(surveyJson);
-  survey.css = myCss;
+  // survey.css = myCss;
  
   let timerStarted = false;
   let result = -1;
@@ -86,9 +86,9 @@ function App() {
 
 export default App;
 
-var myCss = {
-  question: {
-    content: "content-text",
-    title: "question-text",
-  }
-};
+// var myCss = {
+//   question: {
+//     content: "content-text",
+//     title: "question-text",
+//   }
+// };
