@@ -2,9 +2,15 @@ import 'survey-core/defaultV2.min.css';
 import './App.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
-  
+import React, { useEffect } from 'react';
+
 function RunSurvey(props) {
   const surveyJson = props.data;
+  const tabTitle = props.title;
+
+  useEffect(() => {
+    document.title = tabTitle;
+  }, [tabTitle]); 
 
   const survey = new Model(surveyJson);
   // survey.css = myCss;
