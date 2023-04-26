@@ -1,0 +1,1435 @@
+{
+ "title": "Personal Hx Testing Referral Eligibility",
+ "logoPosition": "right",
+ "pages": [
+  {
+   "name": "disclaimer",
+   "elements": [
+    {
+     "type": "html",
+     "name": "disclaimerText",
+     "html": "<p>Disclaimer text will go here.</p>"
+    }
+   ],
+   "title": "Survey Disclaimer"
+  },
+  {
+   "name": "page0",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "question1",
+     "title": "Are you of Ashkenazi Jewish ancestry with at least one of 4 Ashkenazi Jewish grandparents?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{question1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item2",
+       "text": "No"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "page1",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "question2",
+     "visibleIf": "{question1} = 'Item2'",
+     "title": "Does your patient have Personal History of Cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{question2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "page2",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "question3",
+     "visibleIf": "{question2} = 'Item 2'",
+     "title": "Does your patient have a family history of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{question3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      },
+      {
+       "value": "Item 3",
+       "text": "Limited or Unknown FH"
+      }
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "question4",
+     "visibleIf": "{question2} = 'Item 1'",
+     "title": "What kind of cancer did/does your patient have?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{question4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Ovarian Cancer"
+      },
+      {
+       "value": "Item 2",
+       "text": "Pancreatic Cancer"
+      },
+      {
+       "value": "Item 3",
+       "text": "Colon Cancer"
+      },
+      {
+       "value": "Item 4",
+       "text": "Endometrial Cancer"
+      },
+      {
+       "value": "Item 5",
+       "text": "Breast Cancer"
+      },
+      {
+       "value": "Item 6",
+       "text": "Prostate Cancer"
+      },
+      {
+       "value": "Item 7",
+       "text": "Renal Cell Cancer"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "page3",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "colon1",
+     "visibleIf": "{question4} contains 'Item 3' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2'",
+     "title": "What age was your patient diagnosed at?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{colon1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "50 and greater"
+      },
+      {
+       "value": "Item 2",
+       "text": "Less than 50"
+      }
+     ]
+    }
+   ],
+   "title": "Colon Cancer"
+  },
+  {
+   "name": "page4",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial1",
+     "visibleIf": "{question4} contains 'Item 4' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {colon1} <> 'Item 2'",
+     "title": "What age was your patient diagnosed at?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "50 and greater"
+      },
+      {
+       "value": "Item 2",
+       "text": "Less than 50"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page5",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial2",
+     "visibleIf": "{endometrial1} = 'Item 1'",
+     "title": "Have they been dx with another cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page6",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial3",
+     "visibleIf": "{endometrial2} = 'Item 2'",
+     "title": "Is there a family history of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page7",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "question19",
+     "visibleIf": "{endometrial3} = 'Item 1'",
+     "title": "Was it one of these cancers through a 2nd degree relative? Colon, Gastric, Pancreas, Small Bowel, Biliary Tract, Brain, Bladder/Urothelial, and/or Small intestine, sebaceous adenomas, sebaceous carcinomas keratoacanthoma?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{question19} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page8",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial4",
+     "visibleIf": "{endometrial2} = 'Item 1'",
+     "title": "Was the cancer any of the following: E colon, Gastric, Pancreas, Small Bowel, Biliary Tract, Brain, Bladder/Urothelial, and/or Small intestine?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page9",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial5",
+     "visibleIf": "{question19} = 'Item 2'",
+     "title": "Was there any other cancer through 3rd  g=degree relative?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial5} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page10",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial6",
+     "visibleIf": "{question19} = 'Item 1'",
+     "title": "How old are these 2nd degree relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial6} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "<50"
+      },
+      {
+       "value": "Item 2",
+       "text": ">=50"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page11",
+   "elements": [
+    {
+     "type": "checkbox",
+     "name": "endometrial7",
+     "visibleIf": "{endometrial5} = 'Item 1'",
+     "title": "What type of cancer was it?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial7} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Breast"
+      },
+      {
+       "value": "Item 2",
+       "text": "Ovarian"
+      },
+      {
+       "value": "Item 3",
+       "text": "Pancreatic"
+      },
+      {
+       "value": "Item 4",
+       "text": "Prostate"
+      },
+      {
+       "value": "Item 5",
+       "text": "Other cancers"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page12",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "endometrial8",
+     "visibleIf": "{endometrial6} = 'Item 2'",
+     "title": "How many?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{endometrial8} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "One"
+      },
+      {
+       "value": "Item 2",
+       "text": "Two or more"
+      }
+     ]
+    }
+   ],
+   "title": "Endometrial Cancer"
+  },
+  {
+   "name": "page13",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast1",
+     "visibleIf": "{question4} contains 'Item 5' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {colon1} <> 'Item 2' and {endometrial1} <> 'Item 2' and {endometrial4} <> 'Item 1' and {endometrial6} <> 'Item 1' and {endometrial8} <> 'Item 2'",
+     "title": "What age was your patient diagnosed at? *American College of breast surgeons recommends testing for BRCA if diagnosed with cancer at any age*",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": ">50"
+      },
+      {
+       "value": "Item 2",
+       "text": "<=50"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page14",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast2",
+     "visibleIf": "{breast1} = 'Item 1'",
+     "title": "Were there multiple primary breast cancers?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page15",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast3",
+     "visibleIf": "{breast2} = 'Item 2'",
+     "title": "Was/Is it Triple Negative?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page16",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast4",
+     "visibleIf": "{breast3} = 'Item 2'",
+     "title": "Was it lobular breast cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page17",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast5",
+     "visibleIf": "{breast4} = 'Item 1'",
+     "title": "Is there a personal or family hx of diffuse gastric cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast5} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page18",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast6",
+     "visibleIf": "{breast4} = 'Item 2' or {breast5} = 'Item 2'",
+     "title": "Do you have a family history of cancer through third degree relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast6} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page19",
+   "elements": [
+    {
+     "type": "checkbox",
+     "name": "breast7",
+     "visibleIf": "{breast6} = 'Item 1'",
+     "title": "What type of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast7} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Prostate Cancer (high grade only)"
+      },
+      {
+       "value": "Item 2",
+       "text": "Prostate Cancer (low grade only)"
+      },
+      {
+       "value": "Item 3",
+       "text": "Ovarian Cancer"
+      },
+      {
+       "value": "Item 4",
+       "text": "Pancreatic Cancer"
+      },
+      {
+       "value": "Item 5",
+       "text": "Male Breast Cancer"
+      },
+      {
+       "value": "Item 6",
+       "text": "Breast Cancer"
+      },
+      {
+       "value": "Item 7",
+       "text": "Colon"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer"
+  },
+  {
+   "name": "page20",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "lowGradeProstate_breast1",
+     "visibleIf": "{breast7} contains 'Item 2' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4'",
+     "title": "Were there >= 2 relatives with prostate cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{lowGradeProstate_breast1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Low Grade Prostate Cancer under BC Path"
+  },
+  {
+   "name": "page21",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "lowGradeProstate_breast2",
+     "visibleIf": "{lowGradeProstate_breast1} = 'Item 2'",
+     "title": "Did anyone else have breast cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{lowGradeProstate_breast2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Low Grade Prostate Cancer under BC Path"
+  },
+  {
+   "name": "page22",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast_breast1",
+     "visibleIf": "{breast7} contains 'Item 6' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4' and {lowGradeProstate_breast1} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1'",
+     "title": "How old are these relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast_breast1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Anyone <= 50"
+      },
+      {
+       "value": "Item 2",
+       "text": "Anyone >50"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer under BC Path"
+  },
+  {
+   "name": "page23",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast_breast2",
+     "visibleIf": "{breast_breast1} = 'Item 2'",
+     "title": "How many diagnoses? (not number of relatives)",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast_breast2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": ">=2 diagnoses"
+      },
+      {
+       "value": "Item 2",
+       "text": "1 diagnosis"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer under BC Path"
+  },
+  {
+   "name": "page24",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast_breast3",
+     "visibleIf": "{breast_breast2} = 'Item 2'",
+     "title": "Was there anyone in the family have prostate cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast_breast3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer under BC Path"
+  },
+  {
+   "name": "page25",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "breast_breast4",
+     "visibleIf": "{breast_breast3} = 'Item 2'",
+     "title": "Was there any other cancer through 3rd g=degree relative?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{breast_breast4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Breast Cancer under BC Path"
+  },
+  {
+   "name": "page26",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "prostate1",
+     "visibleIf": "{question4} contains 'Item 6' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {colon1} <> 'Item 2' and {endometrial1} <> 'Item 2' and {endometrial4} <> 'Item 1' and {endometrial6} <> 'Item 1' and {endometrial8} <> 'Item 2' and {breast1} <> 'Item 2' and {breast2} <> 'Item 1' and {breast3} <> 'Item 1' and {breast5} <> 'Item 1' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4' and {lowGradeProstate_breast1} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {breast_breast2} <> 'Item 1' and {breast_breast3} <> 'Item 1'",
+     "title": "What grade was it?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "High-grade, very high-grade"
+      },
+      {
+       "value": "Item 2",
+       "text": "Intraductal/cribiform"
+      },
+      {
+       "value": "Item 3",
+       "text": "Low risk"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer"
+  },
+  {
+   "name": "page27",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "prostate2",
+     "visibleIf": "{prostate1} = 'Item 3'",
+     "title": "Any personal history of colon, exocine  pancreatic, gastric, melanoma, upper tract urothelial, glioblastoma, biliary track, small intestinal cancer, or male breast cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer"
+  },
+  {
+   "name": "page28",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "prostate3",
+     "visibleIf": "{prostate2} = 'Item 2'",
+     "title": "Any family history of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer"
+  },
+  {
+   "name": "page29",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "prostate4",
+     "visibleIf": "{prostate3} = 'Item 1'",
+     "title": "Any other relatives with cancer through 3rd degree?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer"
+  },
+  {
+   "name": "page30",
+   "elements": [
+    {
+     "type": "checkbox",
+     "name": "prostate5",
+     "visibleIf": "{prostate4} = 'Item 1'",
+     "title": "What kind of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate5} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Female breast cancer"
+      },
+      {
+       "value": "Item 2",
+       "text": "Male breast cancer (any age)"
+      },
+      {
+       "value": "Item 3",
+       "text": "Ovarian cancer (any age)"
+      },
+      {
+       "value": "Item 4",
+       "text": "Pancreatic cancer (any age)"
+      },
+      {
+       "value": "Item 5",
+       "text": "Prostate cancer"
+      },
+      {
+       "value": "Item 6",
+       "text": "Colon, endometrial gastric, upper tract urothelial, glioblastoma, biliary track, and small intestinal"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer"
+  },
+  {
+   "name": "page9",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "femaleBreast_prostate1",
+     "visibleIf": "{prostate5} contains 'Item 1' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4'",
+     "title": "How many relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{femaleBreast_prostate1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "One relative"
+      },
+      {
+       "value": "Item 2",
+       "text": ">=2 relatives with breast cancer, any age"
+      }
+     ]
+    }
+   ],
+   "title": "Female Breast Cancer under Prostate Cancer"
+  },
+  {
+   "name": "page31",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "femaleBreast_prostate2",
+     "visibleIf": "{femaleBreast_prostate1} = 'Item 1'",
+     "title": "How old are these relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{femaleBreast_prostate2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Breast cancer over 50"
+      },
+      {
+       "value": "Item 2",
+       "text": "Breast cancer under or at 50"
+      }
+     ]
+    }
+   ],
+   "title": "Female Breast Cancer under Prostate Cancer"
+  },
+  {
+   "name": "page32",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "femaleBreast_prostate3",
+     "visibleIf": "{femaleBreast_prostate2} = 'Item 1'",
+     "title": "Did any other relative have prostate cancer (any age, greater than Grade Group 1)?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{femaleBreast_prostate3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Female Breast Cancer under Prostate Cancer"
+  },
+  {
+   "name": "page33",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "prostate_prostate1",
+     "visibleIf": "{prostate5} contains 'Item 5' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {femaleBreast_prostate1} <> 'Item 2' and {femaleBreast_prostate2} <> 'Item 2' and {femaleBreast_prostate3} <> 'Item 1'",
+     "title": "Does it meet either of these criteria?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{prostate_prostate1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Metastatic, high- or very-high risk"
+      },
+      {
+       "value": "Item 2",
+       "text": "Two relatives with prostate cancer, any grade at any age"
+      }
+     ]
+    }
+   ],
+   "title": "Prostate Cancer under Prostate Cancer"
+  },
+  {
+   "name": "page34",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "ceugbs_prostate1",
+     "visibleIf": "{prostate5} contains 'Item 6' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {femaleBreast_prostate1} <> 'Item 2' and {femaleBreast_prostate2} <> 'Item 2' and {femaleBreast_prostate3} <> 'Item 1' and {prostate_prostate1} <> 'Item 1' and {prostate_prostate1} <> 'Item 2'",
+     "title": "Were there >= 3 relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{ceugbs_prostate1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Colon, endometrial gastric, upper tract urothelial, glioblastoma, biliary track, and small intestinal under Prostate Cancer"
+  },
+  {
+   "name": "page35",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "ceugbs_prostate2",
+     "visibleIf": "{ceugbs_prostate1} = 'Item 1'",
+     "title": "Were they first- or second-degree relatives?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{ceugbs_prostate2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Colon, endometrial gastric, upper tract urothelial, glioblastoma, biliary track, and small intestinal under Prostate Cancer"
+  },
+  {
+   "name": "page36",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "renal1",
+     "visibleIf": "{question4} contains 'Item 7' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {colon1} <> 'Item 2' and {endometrial1} <> 'Item 2' and {endometrial4} <> 'Item 1' and {endometrial6} <> 'Item 1' and {endometrial8} <> 'Item 2' and {breast1} <> 'Item 2' and {breast2} <> 'Item 1' and {breast3} <> 'Item 1' and {breast5} <> 'Item 1' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 2' and {breast7} notcontains 'Item 3' and {lowGradeProstate_breast1} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {breast_breast2} <> 'Item 1' and {breast_breast3} <> 'Item 1' and {prostate1} <> 'Item 1' and {prostate2} <> 'Item 1' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {femaleBreast_prostate1} <> 'Item 2' and {femaleBreast_prostate2} <> 'Item 2' and {femaleBreast_prostate3} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {ceugbs_prostate2} <> 'Item 1'",
+     "title": "What age was your patient diagnosed at?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{renal1} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "<= age 46"
+      },
+      {
+       "value": "Item 2",
+       "text": "> age 47 or greater"
+      }
+     ]
+    }
+   ],
+   "title": "Renal Cell Cancer"
+  },
+  {
+   "name": "page37",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "renal2",
+     "visibleIf": "{renal1} = 'Item 2'",
+     "title": "Were there one or more additional renal cell cancer dx in a first or second degree relative?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{renal2} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Renal Cell Cancer"
+  },
+  {
+   "name": "page38",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "renal3",
+     "visibleIf": "{renal2} = 'Item 2'",
+     "title": "Did the tumor have the following histologic characteristics:",
+     "description": "● Multifocal papillary histology\n● HLRCC-associated RCC, RCC with fumarate hydratase (FH) deficiency or other histologic features associated with HLRCC\n● Birt-Hogg-Dubé syndrome (BHDS)-related histology (multiple chromophobe, oncocytoma, or oncocytic hybrid)\n● Angiomyolipomas of the kidney and one additional tuberous sclerosis complex (TSC) criterion in the same person (See Table 1)\n● Succinate dehydrogenase (SDH)-deficient RCC histologye",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{renal3} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Renal Cell Cancer"
+  },
+  {
+   "name": "page39",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "renal4",
+     "visibleIf": "{renal3} = 'Item 2'",
+     "title": "Are there other cancers in patients history?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{renal4} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Renal Cell Cancer"
+  },
+  {
+   "name": "page40",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "renal5",
+     "visibleIf": "{renal4} = 'Item 2'",
+     "title": "Any family history of cancer?",
+     "hideNumber": true,
+     "validators": [
+      {
+       "type": "expression",
+       "text": "Please select an answer choice before proceeding.",
+       "expression": "{renal5} notempty"
+      }
+     ],
+     "choices": [
+      {
+       "value": "Item 1",
+       "text": "Yes"
+      },
+      {
+       "value": "Item 2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Renal Cell Cancer"
+  },
+  {
+   "name": "page41",
+   "elements": [
+    {
+     "type": "html",
+     "name": "meetsCriteria",
+     "visibleIf": "{question4} anyof ['Item 1', 'Item 2'] or {colon1} = 'Item 2' or {endometrial1} = 'Item 2' or {breast1} = 'Item 2' or {prostate1} = 'Item 1' or {renal1} = 'Item 1' or {breast2} = 'Item 1' or {prostate2} = 'Item 1' or {renal2} = 'Item 1' or {endometrial4} = 'Item 1' or {breast3} = 'Item 1' or {renal3} = 'Item 1' or {endometrial6} = 'Item 1' or {breast5} = 'Item 1' or {prostate5} anyof ['Item 2', 'Item 3', 'Item 4'] or {endometrial8} = 'Item 2' or {breast7} anyof ['Item 1', 'Item 3', 'Item 4', 'Item 5'] or {femaleBreast_prostate1} = 'Item 2' or {prostate_prostate1} anyof ['Item 1', 'Item 2'] or {lowGradeProstate_breast1} = 'Item 1' or {breast_breast1} = 'Item 1' or {femaleBreast_prostate2} = 'Item 2' or {ceugbs_prostate2} = 'Item 1' or {lowGradeProstate_breast2} = 'Item 1' or {breast_breast2} = 'Item 1' or {femaleBreast_prostate3} = 'Item 1' or {breast_breast3} = 'Item 1' or {question1} = 'Item1'",
+     "html": "<h3> This patient has <span style=\"background-color: #cee6af; color: #ffffff\">  met the criteria for screening.</span> </h3>"
+    },
+    {
+     "type": "html",
+     "name": "doesNotMeetCriteria",
+     "visibleIf": "{colon1} <> 'Item 2' and {endometrial1} <> 'Item 2' and {breast1} <> 'Item 2' and {prostate1} <> 'Item 1' and {renal1} <> 'Item 1' and {breast2} <> 'Item 1' and {prostate2} <> 'Item 1' and {renal2} <> 'Item 1' and {endometrial4} <> 'Item 1' and {breast3} <> 'Item 1' and {renal3} <> 'Item 1' and {endometrial6} <> 'Item 1' and {breast5} <> 'Item 1' and {endometrial8} <> 'Item 2' and {femaleBreast_prostate1} <> 'Item 2' and {lowGradeProstate_breast1} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {femaleBreast_prostate2} <> 'Item 2' and {ceugbs_prostate2} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1' and {breast_breast2} <> 'Item 1' and {femaleBreast_prostate3} <> 'Item 1' and {breast_breast3} <> 'Item 1' and {question1} <> 'Item1' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4' and {breast7} notcontains 'Item 5' and {prostate_prostate1} <> 'Item 1' and {prostate_prostate1} <> 'Item 2' and {colon1} <> 'Item 1' and {prostate1} <> 'Item 2' and {endometrial4} <> 'Item 2' and {renal5} <> 'Item 1' and {breast7} notcontains 'Item 7' and {breast_breast4} <> 'Item 1' and {endometrial7} notcontains 'Item 1' and {endometrial7} notcontains 'Item 2' and {endometrial7} notcontains 'Item 3' and {endometrial7} notcontains 'Item 4' and {endometrial7} notcontains 'Item 5' and {question3} <> 'Item 3' and {question3} <> 'Item 1'",
+     "html": "<h3> This patient has <span style=\"background-color: #b4403c; color: #ffffff\">  not met the criteria for screening.</span> </h3>"
+    },
+    {
+     "type": "html",
+     "name": "geneticCounselor",
+     "visibleIf": "{question3} = 'Item 3'",
+     "html": "<h3> This patient should <span style=\"background-color: #faecae; color: #ffffff\"> speak to a genetic counselor. </span> </h3>"
+    },
+    {
+     "type": "html",
+     "name": "familyTract",
+     "visibleIf": "({question3} = 'Item 1' or {endometrial4} = 'Item 2' or {renal5} = 'Item 1' or {endometrial7} anyof ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'] or {breast7} contains 'Item 7' or {breast_breast4} = 'Item 1') and ({endometrial1} <> 'Item 2' and {breast1} <> 'Item 2' and {prostate1} <> 'Item 1' and {renal1} <> 'Item 1' and {breast2} <> 'Item 1' and {prostate2} <> 'Item 1' and {renal2} <> 'Item 1' and {endometrial4} <> 'Item 1' and {breast3} <> 'Item 1' and {renal3} <> 'Item 1' and {endometrial6} <> 'Item 1' and {breast5} <> 'Item 1' and {endometrial8} <> 'Item 2' and {femaleBreast_prostate1} <> 'Item 2' and {lowGradeProstate_breast1} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {femaleBreast_prostate2} <> 'Item 2' and {ceugbs_prostate2} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1' and {breast_breast2} <> 'Item 1' and {femaleBreast_prostate3} <> 'Item 1' and {breast_breast3} <> 'Item 1' and {question1} <> 'Item1' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4' and {breast7} notcontains 'Item 5' and {prostate_prostate1} <> 'Item 1' and {prostate_prostate1} <> 'Item 2' and {colon1} <> \"Item 2\")",
+     "html": "<h3> This patient should <span style=\"background-color: #e99a40\"> be taken down the Family Hx tract. </span> </h3>"
+    },
+    {
+     "type": "html",
+     "name": "germlineTesting",
+     "visibleIf": "({colon1} = 'Item 1' or {prostate1} = 'Item 2') and ({colon1} <> 'Item 2' and {endometrial1} <> 'Item 2' and {breast1} <> 'Item 2' and {renal1} <> 'Item 1' and {breast2} <> 'Item 1' and {prostate2} <> 'Item 1' and {renal2} <> 'Item 1' and {endometrial4} <> 'Item 1' and {breast3} <> 'Item 1' and {renal3} <> 'Item 1' and {endometrial6} <> 'Item 1' and {breast5} <> 'Item 1' and {endometrial8} <> 'Item 2' and {femaleBreast_prostate1} <> 'Item 2' and {lowGradeProstate_breast1} <> 'Item 1' and {breast_breast1} <> 'Item 1' and {femaleBreast_prostate2} <> 'Item 2' and {ceugbs_prostate2} <> 'Item 1' and {lowGradeProstate_breast2} <> 'Item 1' and {breast_breast2} <> 'Item 1' and {femaleBreast_prostate3} <> 'Item 1' and {breast_breast3} <> 'Item 1' and {question1} <> 'Item1' and {question4} notcontains 'Item 1' and {question4} notcontains 'Item 2' and {prostate5} notcontains 'Item 2' and {prostate5} notcontains 'Item 3' and {prostate5} notcontains 'Item 4' and {breast7} notcontains 'Item 1' and {breast7} notcontains 'Item 3' and {breast7} notcontains 'Item 4' and {breast7} notcontains 'Item 5' and {prostate_prostate1} <> 'Item 1' and {prostate_prostate1} <> 'Item 2')",
+     "html": "<h3> This patient should <span style=\"background-color: #cee6af; color: #ffffff\">  be considred for Germline testing per NCCN 1.2022.</span> </h3>"
+    }
+   ],
+   "title": "Result"
+  },
+  {
+   "name": "page42",
+   "elements": [
+    {
+     "type": "text",
+     "name": "surveytime",
+     "visible": false,
+     "title": "How long did the survey take to complete?",
+     "hideNumber": true
+    },
+    {
+     "type": "text",
+     "name": "endResult",
+     "visible": false,
+     "title": "This patient",
+     "hideNumber": true
+    }
+   ]
+  }
+ ],
+ "triggers": [
+  {
+   "type": "complete"
+  }
+ ],
+ "questionStartIndex": "1"
+}
