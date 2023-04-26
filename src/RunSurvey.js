@@ -83,7 +83,7 @@ function RunSurvey(props) {
       timerStarted = false;
       survey.getQuestionByName("surveytime").value = survey.timeSpent;
 
-      // Determines end recommendation for the patient
+      // determines end recommendation for the patient
       let resultText = "";
 
       // builds a string to hold all of the result information
