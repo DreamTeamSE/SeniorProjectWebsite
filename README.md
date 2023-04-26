@@ -23,7 +23,7 @@ TODO ASHISH OR SHRUTHI
 <a name = "domain"></a>
 ## Problem Domain 🌎
 
-TODO ASHISH OR SHRUTHI
+Currently, the process for identifying whether a patient should be screened for hereditary cancer entails a physician asking a sequence of questions to the patient. These questions can be visualized as a decision tree since they rely on the patient's responses and eventually result in the patient either qualifying or not qualifying for additional screening for hereditary cancer. Due to the quantity of questions and the specific order in which they must be asked, the procedure is intricate and time-consuming, potentially leading physicians to overlook questions or make errors.
 
 <a name = "surveyjs"></a>
 ## SurveyJS 📝
