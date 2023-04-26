@@ -18,6 +18,7 @@ function RunSurvey(props) {
   let timerStarted = false;
   let results = [];
 
+  // Starts timer when survey begins
   survey.onAfterRenderQuestion.add(function() {
     if (survey.currentPageNo === 1) {
       if (timerStarted === false) {
@@ -47,6 +48,7 @@ function RunSurvey(props) {
     return false;
   }
 
+  // Keeps track of current recommendation based on survey answers
   survey.onCurrentPageChanged.add(function(sender, options) {
     if(checkResultVisibility("meetsCriteria", options)){
       results.push(1);
@@ -68,11 +70,13 @@ function RunSurvey(props) {
     }
   })
 
+  // Stops timer when survey is submitted
   survey.onComplete.add(function() {
       survey.stopTimer();
       timerStarted = false;
       survey.getQuestionByName("surveytime").value = survey.timeSpent;
 
+      // Determines end recommendation for the patient
       let resultText = "";
 
       for(let i = 0; i < results.length; i++){
@@ -103,6 +107,7 @@ function RunSurvey(props) {
       survey.getQuestionByName("endResult").value = resultText;
   });
 
+  // Resets survey
   survey.onSendResult.add(function(sender, options){
     if(options.success){
       survey.clear();
