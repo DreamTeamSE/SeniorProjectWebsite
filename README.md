@@ -20,8 +20,6 @@ Emily Jones, Jakob Melendez, Ashish Satyavarapu, Shruthi Krishnapuram, and James
 
 In many cases, a person's risk of developing cancer is linked to their genetic makeup. Overtime, researchers have made significant progress in identifying specific genetic mutations that increase the risk of developing certain types of cancer. Identifying patients who may be at risk, however, is a complicated and error-prone process. Physicians typically use a convulted series of questions to determine if a patient should be screened for hereditary cancer. This process can be challenging for both patients and physicians and may result in patients who need to be screened being missed. In response to this issue, our team proposes the development of a web and mobile application that can simplify the screening process by presenting the questions one after another in a user friendly interface making it more accessible to patients and physicians. Our aim is to improve the accuracy of patient outcomes and reduce the number of missed diagnoses.
 
-TODO ASHISH OR SHRUTHI
-
 <a name = "domain"></a>
 ## Problem Domain 🌎
 
