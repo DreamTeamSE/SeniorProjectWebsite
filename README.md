@@ -23,7 +23,7 @@ TODO ASHISH OR SHRUTHI
 <a name = "domain"></a>
 ## Problem Domain 🌎
 
-Currently, the process for identifying whether a patient should be screened for hereditary cancer entails a physician asking a sequence of questions to the patient. These questions can be visualized as a decision tree since they rely on the patient's responses and eventually result in the patient either qualifying or not qualifying for additional screening for hereditary cancer. Due to the quantity of questions and the specific order in which they must be asked, the procedure is intricate and time-consuming, potentially leading physicians to overlook questions or make errors.
+The improvement of cancer screening for hereditary diseases is the collaboration between healthcare and computer science. This entails using technology and software to enhance the accuracy and efficiency of the process. Professionals in computer science create digital tools and applications to support healthcare professionals in their decision-making. These tools include decision trees, algorithms, and other aids for patient screening and diagnosis. The digital screening process proposed is a part of this area of computer science. It utilizes technology to create a more efficient and accurate screening process while giving real-time feedback to healthcare professionals. This feedback highlights areas of concern and decreases the possibility of errors or missed information.
 
 <a name = "surveyjs"></a>
 ## SurveyJS 📝
